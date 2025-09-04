@@ -1,0 +1,393 @@
+/*전체 초기화 : 브라우저마다 margin, padding 통일 */
+/*일단 mobile-first로 제작*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fffaf5;
+    color:#333;
+    line-height:1.6; /*한줄 간 간격*/
+}
+/* ✅ 네비게이션 바 */
+nav{
+    background-color: #ffe6e6;
+    padding: 1rem 2rem; /*상하, 좌우 패딩(rem:root em. 기본 글자크기는 보통 16px)*/
+}
+nav ul{
+    /*기본적으로 ul,div는 세로로 쌓이는데, flex 주면 안의 아이템이 가로로 나란히 정렬*/
+    display: flex;
+    justify-content: center; /* 가로 가운데 정렬 */
+    list-style: none;
+}
+nav li{
+    margin: 0 1.5rem; /*각각 list 요소 별 좌우 간격 띄우기*/
+}
+nav a{
+    text-decoration: none;
+    color:#5c3a2e;
+    font-weight: bold;
+    font-size:1.1rem;
+}
+nav a:hover{
+    color:#d46a6a;
+}
+/* ✅ 메인 배너 - 이브 사진 있는데까지 */
+.main-banner{
+    text-align: center;
+    padding:2rem;
+    background-color:#fff0f0;
+}
+.main-banner h1{ /*Neco Story*/
+    font-size:2.5rem;
+    color:#e06666;
+    margin-bottom:0.5rem;
+}
+.main-banner p{
+    font-size:1.2rem;
+    color:#7c6e65;
+}
+.main-banner img{
+    margin-top:1rem;
+    width:300px;
+    height:auto;
+    border-radius:1rem;
+}
+/* ✅ 사이트 소개 */
+.intro{
+    padding:2rem;
+    text-align: center;
+}
+.intro h2{
+    font-size:2rem;
+    margin-bottom:1rem;
+    color:#e28c8c;
+}
+.intro p{
+    font-size:1.1rem;
+    max-width:600px;
+    margin: 0 auto;
+}
+/*구글 지도*/
+#map {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+/* 지도 아래 주소 텍스트 스타일 */
+.map-address {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+}
+/* ✅ 오늘의 냥냥이 */
+.today-cat{
+    padding:2rem;
+    background-color:#fff5f5;
+    text-align: center;
+}
+.today-cat h2{
+    font-size:1.8rem;
+    margin-bottom:1rem;
+    color:#d96f6f;
+}
+#random-cat img{
+    max-width:300px;
+    width:100%;
+    border-radius:1rem;
+    margin:1rem 0;
+}
+#refresh-cat, #detail-cat{
+    padding: 0.5rem 1.2rem;
+    margin: 0.5rem;
+    font-size:1rem;
+    background-color:#ffc4c4;
+    color:#fff;
+    border:none;
+    border-radius:1rem;
+    cursor: pointer;
+}
+#refresh-cat:hover{
+    background-color:#ff9e9e;
+}
+
+/* ✅ 입양 후기 슬라이드 */
+.slider{
+    padding: 3rem 1rem;
+    background-color:#fff0f5;
+    text-align: center;
+}
+
+.slider h2{
+    font-size:1.8rem;
+    margin-bottom:2rem;
+    color:#c06969;
+}
+/*슬라이더 영역*/
+.slider-container{
+    width:90%;
+    margin: 0 auto;
+}
+
+/* 각 슬라이드 카드*/
+.slide{
+    background-color:#fff;
+    padding:1rem;
+    border-radius:1rem;
+    text-align: center;
+    margin: 0 0.5rem;
+}
+
+.slide img{
+    width:100%;
+    height:300px;
+    object-fit: cover; /*이미지 비율 유지하고, 넘치는 부분은 크롭*/
+    border-radius:0.8rem;
+    margin-bottom:1rem;
+}
+
+.slide p{
+    font-size:1rem;
+    color:#444;
+    line-height:1.4;
+}
+
+
+
+/* ✅ 푸터 */
+footer{
+    background-color:#fce6e6;
+    text-align: center;
+    padding:1rem;
+    font-size:0.9rem;
+    color:#7a6c6c;
+    margin-top:2rem;
+}
+
+
+/* 여기까지 index.html의 CSS. */
+
+/* 여기부터 cats.html의 CSS. */
+
+.page-title{
+    text-align:center;
+    padding: 2rem 1rem;
+    background-color:#fff0f0;
+}
+.page-title h1{
+    font-size:2rem;
+    color:#e06666;
+    margin-bottom: 0.5rem;
+}
+.page-title p{
+    font-size:1.1rem;
+    color:#7c6e65;
+}
+
+/* ✅ 고양이 카드 리스트 전체 영역 */
+.cat-list{ /*  section  */
+    display:flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background-color: #fffaf5;
+}
+/* ✅ 고양이 카드 박스 */
+.cat-card{ /* 각각의 div */
+    width:100%;/* 모바일에서는 1개 꽉 차도록*/
+    max-width:280px;
+    background-color:#fff;
+    border-radius:1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /*가로이동 세로이동 번짐정도 색*/
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease;  /*transform 속성이 바뀔 때 0.2초 동안 자연스럽게 이동*/
+}
+
+.cat-card:hover{
+    transform: translateY(-5px); /*y축 위쪽으로 5px 이동*/
+}
+
+
+/* ✅ 고양이 이미지 */
+.cat-card img{
+    width:100%;
+    height:220px;
+    object-fit: cover;
+}
+
+/* ✅ 고양이 이름 */
+.cat-card h3{
+    margin:1rem 0 0 0.5rem;
+    color:#d46a6a;
+    font-size:1.3rem;
+}
+
+/* ✅ 기본 정보 텍스트 */
+.cat-card p{
+    margin: 0.3rem 1rem;
+    font-size:0.95rem;
+    color:#555;
+    line-height:1.4;
+}
+
+/* ✅ 자세히 보기 버튼 */
+.detail-btn{
+    display:inline-block;
+    /*inline-block : inline처럼 나란히 배치되지만 width,height,margin,padding 줄 수 ㅇ*/
+    margin:1rem auto 1.5rem; /* 상 좌우 하*/
+    padding: 0.4rem 0.8rem;
+    background-color:#ffc4c4;
+    color:#fff;
+    text-decoration:none;
+    border-radius:1rem;
+    transition: background-color 0.2s;
+}
+
+.detail-btn:hover{
+    background-color: #ff9e9e;
+}
+
+/*여기서부터 cat-detail 의 CSS임미다*/
+.cat-detail{ /* section id */
+    padding:2rem;
+    max-width:700px; /*PC에서 너무 넓어지지 않도록..*/
+    margin: 1rem auto;
+    text-align: center;
+    background-color:#fff8f8;
+    border-radius:1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.cat-detail img{
+    width:300px;
+    height:auto;
+    border-radius:1rem;
+    margin-bottom:1.5rem;
+}
+/* 냥이 이름*/
+.cat-detail h2{
+    font-size:2rem;
+    color:#e28c8c;
+    margin-bottom:1rem;
+}
+/*상세 텍스트*/
+.cat-detail p{
+    width:450px;
+    font-size:1.1rem;
+    color: #444;
+    margin: 0.3rem auto;
+}
+
+/* cat-detail section에 있는 버튼 공통
+: cats.html에 있는 detail-btn과 css 같으므로 따로 추가 X
+ */
+
+/*여기서부터 adopt.html */
+
+/*page-title은 공통이니 패스*/
+
+/* ✅ 신청 폼 전체 박스(Section) */
+.adopt-form{
+    max-width:600px;
+    margin:2rem auto;
+    padding:2rem;
+    background-color:#fff9f9;
+    border-radius:1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+/* ✅ 폼끼리 내부 정렬 */
+.adopt-form form {
+   display:flex;
+    flex-direction: column; /*이렇게 하면 세로 정렬*/
+}
+/* ✅ 모든 input과 textarea 공통 스타일 */
+.adopt-form input,
+.adopt-form textarea{
+    padding: 0.7rem 1rem;
+    border:1px solid #ddd;
+    border-radius:0.8rem;
+    font-size: 1rem;
+    margin-top:0.3rem;
+}
+
+/* ✅ 포커스 시 분홍색으로 테두리 강조 */
+.adopt-form input:focus,
+.adopt-form textarea:focus{
+    outline: none; /*기본 테두리는 제거*/
+    border-color: #ffc4c4;
+    box-shadow: 0 0 5px rgba(255,180,180,0.5);
+}
+
+/*✅ 제출 버튼 */
+.adopt-form button{
+    margin-top:2rem;
+    padding:0.8rem 1rem;
+    background-color:#ffc4c4;
+    color:white;
+    border:none;
+    border-radius:1rem;
+    font-size: 1rem;
+    cursor:pointer;
+    transition: background-color 0.2s ease;
+}
+/* ✅ 버튼에 마우스 올렸을 때 */
+.adopt-form button:hover{
+    background-color: #ff9e9e;
+}
+
+/* 반응형 웹 : 태블릿 버전*/
+@media(min-width:600px){
+    nav li{
+        margin: 0 3rem; /* nav끼리 좌우 간격 증가!*/
+        /* 이건 전체 공통 */
+    }
+    .main-banner img{ /*index.html*/
+        width:400px;
+        height:auto;
+    }
+    .intro p{   /*index.html*/
+        font-size:1.2rem;
+        max-width:700px; /*intro 설명 글자크기, 폭 확장*/
+    }
+    #random-cat img{    /*index.html*/
+        max-width:400px; /*오늘의 냥냥이 이미지 확대*/
+    }
+    #map {   /*index.html*/
+        height: 350px;
+    }
+    .cat-card{ /*cats.html - 각각의 div 하나*/
+        width:calc(50% - 1.5rem); /*하나의 크기는 전체의 50%가 약간 안됨 - 2개까지 들어감*/
+    }
+}
+/* PC 버전*/
+@media(min-width:780px){
+    nav ul{ /* 전체 공통*/
+        justify-content: space-between; /*단순히 좌우간격 넓히는 게 아니라 화면 전체폭 사용하도록*/
+        max-width:1000px; /*근데 너무 가쪽으로 붙지 않도록*/
+        margin: 0 auto;
+    }
+    .main-banner h1{ /*index.html*/
+        font-size:3rem;
+    }
+    .main-banner p{ /*index.html*/
+        font-size:1.5rem;
+    }
+    #map {  /*index.html*/
+        height: 400px;
+    }
+    .cat-card{/*cats.html - 각각의 div 하나*/
+        width:calc(25% - 1.5rem); /*4개씩 들어오게 하려고*/
+    }
+    .cat-list{/*cats.html-전체 cat list section*/
+        max-width:1200px; /*전체 컨테이너 크기 확장*/
+        margin:0 auto;
+    }
+}
+

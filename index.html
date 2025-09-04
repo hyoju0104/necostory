@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NecoStory</title>
+<!--    [1] jQuery를 먼저 추가-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--    [2] Slick Slider CSS & JS 추가 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Google Maps API 추가 -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMo-RI_1I50UdElrcqMXrWcecRgBdVCig&callback=initMap" async defer></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<!-- ✅ 네비게이션 바 -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">홈</a></li>
+            <li><a href="cats.html">고양이 보러가기</a></li>
+            <li><a href="adopt.html">입양 신청</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ✅ 메인 배너 -->
+<section class="main-banner">
+    <h1>Neco Story 🐾</h1>
+    <p>고양이들의 가족이 되어 주세요</p>
+    <img src="img/main_banner.jpg" alt="main-banner" />
+</section>
+<!-- ✅ 사이트 소개 -->
+<section class="intro">
+    <h2>네코스토리 소개</h2>
+    <p>하루에도 수많은 고양이들이 따뜻한 가족을 기다리고 있어요.
+        네코스토리는 그런 아이들의 이야기를 담아,
+        새로운 가족을 찾을 수 있도록 돕는 작은 다리입니다.
+        귀엽고 사랑스러운 냥이들과의 첫 만남,
+        지금 이곳에서 시작해보세요 🐾</p>
+    <br>
+    <p><b>위치</b> </p>
+    <!-- ✅ 지도 표시 div-->
+    <div id="map"></div>
+    <p class="map-address">서울특별시 강남구 테헤란로26길 12 네코스토리</p>
+</section>
+<!-- ✅ 오늘의 냥냥이 (API 활용) -->
+<section class="today-cat">
+    <h2>오늘의 고양이</h2>
+    <div id="random-cat">
+    </div>
+    <button id="refresh-cat">또 보기</button>
+    <br>
+    <a href="cats.html">
+        <button id="detail-cat">자세히 보기</button>
+    </a>
+</section>
+<!--✅ 입양 후기 슬라이드-->
+<section class="slider">
+    <h2>입양 후기</h2>
+    <div class="slider-container">
+        <div class="slide">
+            <img src="img/review_1.jpg" alt="입양후기1">
+            <p>처음엔 낯설어했지만 이제는 제 옆자리 단골이에요♡ </p>
+        </div>
+        <div class="slide">
+            <img src="img/review_2.jpg" alt="입양후기2">
+            <p>하루 종일 졸졸 따라다니는 모습에 마음이 녹아요</p>
+        </div>
+        <div class="slide">
+            <img src="img/review_3.jpg" alt="입양후기3">
+            <p>집이 한결 따뜻해지고 웃을 일이 많아졌어요!</p>
+        </div>
+        <div class="slide">
+            <img src="img/review_4.jpg" alt="입양후기4">
+            <p>하루하루가 행복 그 자체예요. 고양이가 세상을 구한다😻 </p>
+        </div>
+        <div class="slide">
+            <img src="img/review_5.jpg" alt="입양후기5">
+            <p>처음엔 걱정도 많았는데, 이젠 가장 큰 기쁨이 됐어요 </p>
+        </div>
+        <div class="slide">
+            <img src="img/review_6.jpg" alt="입양후기6">
+            <p>늘 조용했던 집이 아이 덕분에 웃음소리가 많아졌어요! </p>
+        </div>
+        <div class="slide">
+            <img src="img/review_7.jpg" alt="입양후기6">
+            <p> 이제는 제 무릎 위가 제일 편한가 봐요</p>
+        </div>
+        <div class="slide">
+            <img src="img/review_8.jpg" alt="입양후기6">
+            <p> 고양이와 함께하는 시간은 선물이에요</p>
+        </div>
+        <div class="slide">
+            <img src="img/review_9.jpg" alt="입양후기6">
+            <p>네코스토리에서 만난 운명 같은 인연이에요.</p>
+        </div>
+    </div>
+</section>
+<!-- ✅ footer-->
+<footer>
+    <p>&copy; 2025 NecoStory | Designed By 안주경 </p>
+</footer>
+
+<script src="js/main.js"></script>
+<!--js 마지막에 넣는 이유: html 객체들이 안전하게 로딩 후 시행하기 위해-->
+</body>
+</html>
