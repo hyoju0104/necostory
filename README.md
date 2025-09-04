@@ -69,5 +69,3 @@ myweb/
    git clone https://github.com/your-id/necostory.git
 2. index.html을 브라우저로 실행
 
-## 📂 폴더 구조
-
