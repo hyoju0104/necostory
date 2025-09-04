@@ -67,8 +67,7 @@ myweb/
 1. 레포지토리 클론
    ```bash
    git clone https://github.com/your-id/necostory.git
-index.html을 브라우저로 실행
+2. index.html을 브라우저로 실행
 
-(선택) GitHub Pages를 통해 정적 호스팅 배포 가능
 ## 📂 폴더 구조
 
